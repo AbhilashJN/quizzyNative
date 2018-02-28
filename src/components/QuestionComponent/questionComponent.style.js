@@ -1,6 +1,6 @@
 export default {
   questionContainer: {
-    fontFamily: 'HelveticaNeue',
+
     display: 'flex',
     flexDirection: 'column',
     borderWidth: 2,

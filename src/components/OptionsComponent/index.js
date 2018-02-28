@@ -23,12 +23,10 @@ class OptionsComponent extends React.Component {
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
-        height: 100,
-        width: 25,
        }}
       >
-        <TextInput style={{ width: 20 }} className="radio-btn" type="radio" value={this.props.option} checked={this.props.isSelected} onChange={(e) => { this.props.selectButton(e.target.value); }} />
-        <Text className="option">{this.props.option}</Text>
+        {/* <TextInput className="radio-btn" type="radio" value={this.props.option} checked={this.props.isSelected} onChange={(e) => { this.props.selectButton(e.target.value); }} /> */}
+        <Text style={{ fontFamily: 'HelveticaNeue', margin: 6 }} className="option">{this.props.option}</Text>
       </View>);
   }
 }

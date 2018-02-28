@@ -106,10 +106,14 @@ render() {
   }
 
   return (
-    <View className="quiz-page">
-      <View className="quiz-header">
-        <Text> Quizzy</Text>
-        <Text> Hello {this.props.username}</Text>
+    <View className="quiz-page" style={{ paddingTop: 20 }}>
+      <View
+        className="quiz-header"
+        style={{
+ display: 'flex', flexDirection: 'row', backgroundColor: 'white', justifyContent: 'flex-start',
+ }}
+      >
+        <Text style={{ fontFamily: 'HelveticaNeue-CondensedBold', padding: 5, fontSize: 15 }}> Hello {this.props.username}</Text>
       </View>
       <View className="questions-container">{quesArray}</View>
       {/* <Button title="Calculate" className="calc-btn" type="Button" disabled={Object.keys(this.state.corrects).length !== (this.state.choices.length)} onPress={() => { this.calculateScore(); }}>Calculate</Button> */}

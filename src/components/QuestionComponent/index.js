@@ -33,16 +33,30 @@ class QuestionComponent extends React.Component {
       // <View style={styles.questionContainer}>
       <View style={styles.questionContainer}>
         <Text style={{
- display: 'flex', flexDirection: 'row', height: 20, backgroundColor: 'orange', borderWidth: 2,
+ display: 'flex', padding: 5, flexDirection: 'row', fontFamily: 'HelveticaNeue-CondensedBold',
 }}
         >{`Question ${this.props.quesNo}`}
         </Text>
         <Text style={{
- display: 'flex', flexDirection: 'row', height: 20,
+ borderWidth: 2,
+ display: 'flex',
+flexDirection: 'row',
+padding: 5,
+margin: 2,
+backgroundColor: '#12b6ed',
+fontFamily: 'HelveticaNeue',
 }}
         >{this.props.question}
         </Text>
-        <Text style={{ width: 100, height: 20 }}>{optsElements}</Text>
+        <View style={{
+ display: 'flex',
+flexDirection: 'column',
+padding: 5,
+
+
+}}
+        >{optsElements}
+        </View>
         {/* </View> */}
       </View>
     );
