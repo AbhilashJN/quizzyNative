@@ -6,6 +6,7 @@ import {
   Text,
   View,
   Button,
+  ScrollView,
 } from 'react-native';
 import QuestionComponent from '../QuestionComponent';
 import './quizPage.style';
@@ -106,7 +107,7 @@ render() {
   }
 
   return (
-    <View className="quiz-page" style={{ paddingTop: 20,overflow: 'scroll' }}>
+    <ScrollView className="quiz-page" style={{ paddingTop: 20, overflow: 'scroll' }}>
       <View
         className="quiz-header"
         style={{
@@ -116,8 +117,8 @@ render() {
         <Text style={{ fontFamily: 'HelveticaNeue-CondensedBold', padding: 5, fontSize: 15 }}> Hello {this.props.username}</Text>
       </View>
       <View className="questions-container">{quesArray}</View>
-      {/* <Button title="Calculate" className="calc-btn" type="Button" disabled={Object.keys(this.state.corrects).length !== (this.state.choices.length)} onPress={() => { this.calculateScore(); }}>Calculate</Button> */}
-    </View>
+      <Button title="Calculate" className="calc-btn" type="Button" disabled={Object.keys(this.state.corrects).length !== (this.state.choices.length)} onPress={() => { this.calculateScore(); }}>Calculate</Button>
+    </ScrollView>
 
 
   );
