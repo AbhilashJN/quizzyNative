@@ -67,9 +67,19 @@ class ScoreBoard extends React.Component {
            }}
           ><Text className="current-score" style={{ fontSize: 50, fontFamily: 'helveticaNeue-Thin' }}>{this.props.score}</Text>/{this.props.maxScore}
           </Text>
-          <View className="score-main-row">
-            <View className="leader-board">
-              <Text>Leaderboard</Text>
+          <View
+            className="score-main-row"
+            style={{
+ display: 'flex', flexDirection: 'row', margin: 10, justifyContent: 'space-between',
+}}
+          >
+            <View
+              className="leader-board"
+              style={{
+              display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', margin: 10, width: 300,
+             }}
+            >
+              <Text style={{ fontFamily: 'HelveticaNeue-CondensedBold', fontSize: 30 }}>Leaderboard</Text>
               {scoreRowsArray}
             </View>
           </View>

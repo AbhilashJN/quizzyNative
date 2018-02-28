@@ -11,13 +11,18 @@ import './scoreRow.style';
 class ScoreRow extends React.Component {
   render() {
     return (
-      <View className="score-row">
-        <View >
-          <Text className="score-row-rank">{`${this.props.rank}. `}</Text>
-          <Text>{this.props.username}</Text>
+      <View
+        className="score-row"
+        style={{
+        display: 'flex', flexDirection: 'row', justifyContent: 'space-between', margin: 10, paddingHorizontal: 10, backgroundColor: '#56BAE1', width: 300, borderWidth: 2,
+       }}
+      >
+        <View style={{ display: 'flex', flexDirection: 'row' }}>
+          <Text style={{ fontFamily: 'HelveticaNeue-CondensedBold', fontSize: 20 }} className="score-row-rank">{`${this.props.rank}. `}</Text>
+          <Text style={{ fontFamily: 'HelveticaNeue-CondensedBold', fontSize: 20, color: 'white' }}>{this.props.username}</Text>
         </View>
-        <View>
-          <Text>{this.props.score}</Text>
+        <View style={{ display: 'flex', flexDirection: 'row' }}>
+          <Text style={{ fontFamily: 'HelveticaNeue-CondensedBold', fontSize: 20, color: 'white' }}>{this.props.score}</Text>
         </View>
       </View>
     );
