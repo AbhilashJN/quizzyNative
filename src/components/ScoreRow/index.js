@@ -14,10 +14,10 @@ class ScoreRow extends React.Component {
       <View className="score-row">
         <View >
           <Text className="score-row-rank">{`${this.props.rank}. `}</Text>
-          {this.props.username}
+          <Text>{this.props.username}</Text>
         </View>
         <View>
-          {this.props.score}
+          <Text>{this.props.score}</Text>
         </View>
       </View>
     );

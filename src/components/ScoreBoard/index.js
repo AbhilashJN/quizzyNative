@@ -6,6 +6,7 @@ import {
   Text,
   View,
   Button,
+  ScrollView,
 } from 'react-native';
 import ScoreRow from '../ScoreRow';
 import './scoreBoard.style';
@@ -32,21 +33,50 @@ class ScoreBoard extends React.Component {
       });
     }
     return (
-      <View className="score-page">
-        <View className="quiz-header">
-          <Text> Quizzy</Text>
-          <Text> Hello {this.props.username}</Text>
-        </View>
-        <Text className="your-score-text">Your score</Text>
-        <Text className="your-score-score"><Text className="current-score">{this.props.score}</Text>/{this.props.maxScore}</Text>
-        <View className="score-main-row">
-          <View className="leader-board">
-            <Text>Leaderboard</Text>
-            {scoreRowsArray}
+
+      <ScrollView
+        className="quiz-page"
+        style={{
+ paddingTop: 20, overflow: 'scroll', display: 'flex', flexDirection: 'column',
+}}
+      >
+        <View
+          className="quiz-header"
+          style={{
+ display: 'flex', flexDirection: 'row', backgroundColor: 'white', justifyContent: 'flex-start',
+ }}
+        >
+          <Text style={{
+ fontFamily: 'HelveticaNeue-CondensedBold', padding: 5, fontSize: 15,
+}}
+          > Hello {this.props.username}
+          </Text>
+        </View >
+        <View style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <Text
+            className="your-score-text"
+            style={{
+ display: 'flex', flexDirection: 'row', justifyContent: 'center', margin: 10, color: 'orange', fontSize: 30, fontFamily: 'HelveticaNeue-CondensedBold',
+}}
+          >Your score
+          </Text>
+          <Text
+            className="your-score-score"
+            style={{
+            display: 'flex', flexDirection: 'row', justifyContent: 'center', margin: 10, fontSize: 30, fontFamily: 'HelveticaNeue-CondensedBold',
+           }}
+          ><Text className="current-score" style={{ fontSize: 50, fontFamily: 'helveticaNeue-Thin' }}>{this.props.score}</Text>/{this.props.maxScore}
+          </Text>
+          <View className="score-main-row">
+            <View className="leader-board">
+              <Text>Leaderboard</Text>
+              {scoreRowsArray}
+            </View>
           </View>
+
+          <Button title="Play Again" className="play-again-btn" type="Button" onPress={() => { this.props.resetGame(); }} />
         </View>
-        <Button title="Play Again" className="play-again-btn" type="Button" onPress={() => { this.props.resetGame(); }}>Play Again</Button>
-      </View>
+      </ScrollView>
     );
   }
 }
