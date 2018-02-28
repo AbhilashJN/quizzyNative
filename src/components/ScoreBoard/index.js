@@ -7,6 +7,7 @@ import {
   View,
   Button,
   ScrollView,
+  TouchableOpacity,
 } from 'react-native';
 import ScoreRow from '../ScoreRow';
 import './scoreBoard.style';
@@ -76,15 +77,29 @@ class ScoreBoard extends React.Component {
             <View
               className="leader-board"
               style={{
-              display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', margin: 10, width: 300,
+              display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', margin: 20, width: 300, marginBottom: 40,
              }}
             >
-              <Text style={{ fontFamily: 'HelveticaNeue-CondensedBold', fontSize: 30 }}>Leaderboard</Text>
+              <Text style={{ fontFamily: 'HelveticaNeue-CondensedBold', fontSize: 30, marginVertical: 20 }}>Leaderboard</Text>
               {scoreRowsArray}
             </View>
           </View>
 
-          <Button title="Play Again" className="play-again-btn" type="Button" onPress={() => { this.props.resetGame(); }} />
+          <TouchableOpacity
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              borderWidth: 2,
+              borderRadius: 10,
+              padding: 10,
+              width: 150,
+              justifyContent: 'center',
+              }}
+            className="play-again-btn"
+            onPress={() => { this.props.resetGame(); }}
+          >
+            <Text style={{ fontFamily: 'HelveticaNeue-CondensedBold', fontSize: 20 }}>Play again</Text>
+          </TouchableOpacity>
         </View>
       </ScrollView>
     );

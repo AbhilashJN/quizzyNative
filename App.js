@@ -27,7 +27,7 @@ export default class App extends Component<Props> {
   constructor(props) {
     super(props);
     this.state = {
-      page: 'score',
+      page: 'login',
       username: null,
       latestScore: 0,
       choices: [],
@@ -45,7 +45,7 @@ export default class App extends Component<Props> {
           username: respJSON.username,
           latestScore: respJSON.latestScore,
           choices: respJSON.choices,
-          page: 'score',
+          page: 'quiz',
         });
       });
   }
