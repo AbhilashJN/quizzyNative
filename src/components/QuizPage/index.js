@@ -106,7 +106,7 @@ render() {
   }
 
   return (
-    <View className="quiz-page" style={{ paddingTop: 20 }}>
+    <View className="quiz-page" style={{ paddingTop: 20,overflow: 'scroll' }}>
       <View
         className="quiz-header"
         style={{

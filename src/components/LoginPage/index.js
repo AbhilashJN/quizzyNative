@@ -13,11 +13,18 @@ import styles from './loginPage.style';
 class LoginPage extends React.Component {
   render() {
     return (
-      <View className="login-page">
-        <View className="login-header-row">
-          <LoginHeader />
-        </View>
-        <View className="login-main-row">
+      <View
+        className="login-page"
+        style={{
+ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'stretch', paddingTop: 30,
+ }}
+      >
+        <View
+          className="login-main-row"
+          style={{
+ display: 'flex', flexDirection: 'column', flexGrow: 1, alignItems: 'stretch',
+}}
+        >
           <LoginCard doLogin={this.props.doLogin} />
         </View>
       </View>
