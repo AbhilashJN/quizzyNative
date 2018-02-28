@@ -60,7 +60,7 @@ saveToDb = (quesID, selectedOptionValue) => {
       choice: selectedOptionValue,
     }),
   };
-  fetch('/saveChoice', config).then(response => response.text()).then((response) => {
+  fetch('http://localhost:8000/saveChoice', config).then(response => response.text()).then((response) => {
     console.log(response);
   });
 }

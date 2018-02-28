@@ -18,7 +18,7 @@ class ScoreBoard extends React.Component {
     };
   }
   componentDidMount() {
-    fetch('/getTopFive').then(response => response.json()).then((respJSON) => {
+    fetch('http://localhost:8000/getTopFive').then(response => response.json()).then((respJSON) => {
       this.setState({ scores: respJSON });
     });
   }
@@ -45,7 +45,7 @@ class ScoreBoard extends React.Component {
             {scoreRowsArray}
           </View>
         </View>
-        <Button title="Play Again" className="play-again-btn" type="Button" onClick={() => { this.props.resetGame(); }}>Play Again</Button>
+        <Button title="Play Again" className="play-again-btn" type="Button" onPress={() => { this.props.resetGame(); }}>Play Again</Button>
       </View>
     );
   }

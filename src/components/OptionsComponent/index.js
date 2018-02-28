@@ -7,7 +7,8 @@ import {
   View,
   TextInput,
 } from 'react-native';
-import './optionsComponent.style';
+import RadioButton from 'react-native-radio-button';
+import styles from './optionsComponent.style';
 
 class OptionsComponent extends React.Component {
   constructor(props) {
@@ -25,7 +26,7 @@ class OptionsComponent extends React.Component {
         alignItems: 'center',
        }}
       >
-        {/* <TextInput className="radio-btn" type="radio" value={this.props.option} checked={this.props.isSelected} onChange={(e) => { this.props.selectButton(e.target.value); }} /> */}
+        <RadioButton value={this.props.option} outerColor="black" isSelected={this.props.isSelected} onPress={(value) => { this.props.selectButton(this.props.option); }} />
         <Text style={{ fontFamily: 'HelveticaNeue', margin: 6 }} className="option">{this.props.option}</Text>
       </View>);
   }
